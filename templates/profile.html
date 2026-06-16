@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Profile - HR ERP</title>
+      <link rel="stylesheet" href="/static/css/profile.css">
+
+
+</head>
+
+<body>
+
+    <div class="header">
+        <h2>HR ERP Management System</h2>
+    </div>
+
+    <div class="container">
+
+        <h1>Employee Profile</h1>
+
+        <form action="/update_employee" method="post">
+
+            {% for n in emp_list %}
+
+            <input type="number" value="{{n[0]}}" name="emp id" placeholder="Employee ID">
+
+            <input type="text" value="{{n[1]}}" name="name" placeholder="Employee Name">
+
+            <input type="email" value="{{n[2]}}" name="email" placeholder="Email">
+
+            <input type="text" value="{{n[3]}}" name="phone" placeholder="Phone">
+
+            <input type="text" value="{{n[4]}}" name="department" placeholder="Department">
+
+            <input type="text" value="{{n[5]}}" name="designation" placeholder="Designation">
+
+            <input type="number" value="{{n[6]}}" name="salary" placeholder="Salary">
+
+            <div class="actions">
+
+                <button type="submit" class="btn edit-btn">
+                    Update Employee
+                </button>
+
+                <a href="/delete_employee?eid={{n[0]}}" class="btn delete-btn">
+                    Delete Employee
+                </a>
+
+                <a href="/view_employee" class="btn back-btn">
+                    Back
+                </a>
+
+            </div>
+
+            {% endfor %}
+
+        </form>
+
+    </div>
+
+</body>
+</html>

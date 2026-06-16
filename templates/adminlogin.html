@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Login</title>
+    <link rel="stylesheet" href="/static/css/admin.css">
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="logo">HR ERP</div>
+
+        <ul class="nav-links">
+            <li><a href="/">Home</a></li>
+            <li><a href="/about">About</a></li>
+            <li><a href="/contact">Contact</a></li>
+            <li><a href="/adminlogin" class="login-btn">Admin Login</a></li>
+        </ul>
+    </nav>
+
+    <!-- Hero -->
+    <section class="hero">
+        <h1>Admin Login</h1>
+        <p>Login to access the HR ERP Dashboard</p>
+    </section>
+
+    <!-- Login Form -->
+    <section class="login-container">
+
+        <div class="login-card">
+
+            <h2>Administrator Login</h2>
+
+            <form action="/admin_dashboard" method="POST">
+
+                <input type="text" name="username"
+                       placeholder="Enter Username">
+
+                <input type="password" name="password"
+                       placeholder="Enter Password">
+
+                <button type="submit">Login</button>
+
+                  <br> <br>
+                <font color="red"> {{msg}}</font>
+
+
+            </form>
+
+
+
+        </div>
+
+    </section>
+
+    <footer>
+        <p>© 2026 HR ERP Management System</p>
+    </footer>
+
+</body>
+</html>

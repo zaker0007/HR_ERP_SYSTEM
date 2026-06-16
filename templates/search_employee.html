@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Search Employee - HR ERP</title>
+
+    <link rel="stylesheet" href="/static/css/search_emp.css">
+</head>
+
+<body>
+
+<div class="dashboard-container">
+
+    <!-- Sidebar -->
+    <div class="dashboard-sidebar">
+
+        <div class="profile">
+            <img src="/static/admin.jpg" alt="Admin">
+            <h2>Admin</h2>
+        </div>
+
+        <ul>
+            <li><a href="/admin_dashboard">🏠 Dashboard</a></li>
+            <li><a href="/add_employee">➕ Add Employee</a></li>
+            <li><a href="/view_employee">👥 View Employees</a></li>
+            <li><a href="/search_employee">🔍 Search Employee</a></li>
+            <li><a href="/logout">🚪 Logout</a></li>
+        </ul>
+
+    </div>
+
+    <!-- Main Content -->
+    <div class="dashboard-content">
+
+        <h1>Search Employee</h1>
+
+        <div class="search-box">
+
+            <form action="/search_employee_result" method="post">
+
+                <label>Employee Name</label>
+
+                <input type="text"
+                       name="empname"
+                       placeholder="Enter Employee Name"
+                       required>
+
+                <button type="submit">
+                    Search Employee
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

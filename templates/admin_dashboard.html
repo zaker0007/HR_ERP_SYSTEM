@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - HR ERP</title>
+    <link rel="stylesheet" href="/static/css/dashborad.css">
+</head>
+<body>
+
+<div class="dashboard-container">
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+
+        <div class="admin-profile">
+            <img src="/static/admin.jpg" alt="Admin" width="200px">
+            <h3>Admin</h3>
+        </div>
+
+        <ul>
+            <li><a href="/dashboard">🏠 Dashboard</a></li>
+            <li><a href="/add_employee">➕ Add Employee</a></li>
+            <li><a href="/view_employee">👥 view Employees</a></li>
+            <li><a href="/search_employee"> 🔍 Search Employee</a></li>
+            <li><a href="/logout">🚪 Logout</a></li>
+        </ul>
+
+    </div>
+
+    <!-- Main Content -->
+    <div class="main-content">
+
+        <h1>Welcome Admin Dashboard</h1> <br> <br>
+       <h3> Hi {{session['name']}} 👋</h3>
+
+        <p>
+            Welcome to HR ERP Management System.
+            Manage employee records easily from one place.
+        </p>
+
+        <div class="dashboard-cards">
+
+            <div class="dash-card">
+                <h2>25</h2>
+                <p>Total Employees</p>
+            </div>
+
+            <div class="dash-card">
+                <h2>5</h2>
+                <p>New Employees</p>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>

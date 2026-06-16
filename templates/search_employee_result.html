@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Employees - HR ERP</title>
+
+    <link rel="stylesheet" href="/static/css/view_emp.css">
+</head>
+
+<body>
+
+<div class="dashboard-container">
+
+    <div class="dashboard-sidebar">
+
+        <div class="profile">
+            <img src="/static/admin.jpg" alt="Admin">
+            <h2>Admin</h2>
+        </div>
+
+        <ul>
+            <li><a href="/admin_dashboard">🏠 Dashboard</a></li>
+            <li><a href="/add_employee">➕ Add Employee</a></li>
+            <li><a href="/view_employee">👥 View Employees</a></li>
+            <li><a href="/search_employee">🔍 Search Employee</a></li>
+            <li><a href="/">🚪 Logout</a></li>
+        </ul>
+
+    </div>
+
+    <div class="dashboard-content">
+
+        <h1>Search Result</h1>
+
+        <div class="table-container">
+
+            <table>
+
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th></th>
+                </tr>
+
+                {% for emp in emplist %}
+                <tr>
+
+                    <td>{{ emp[0] }}</td>
+                    <td>{{ emp[1] }}</td>
+                    <td>{{ emp[2] }}</td>
+
+                    <td>
+                        <a href="/profile?eid={{ emp[0] }}" class="view-btn">
+                            View Profile
+                        </a>
+                    </td>
+
+                </tr>
+                {% endfor %}
+
+            </table>
+
+        </div>
+
+    </div>
+
+</div>
+
+</body>
+</html>
