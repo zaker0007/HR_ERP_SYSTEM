@@ -17,22 +17,25 @@ mysql=MySQL(app)
 
 @app.route('/')
 def index():
-    cur=mysql.connection.cursor()
+    try:
+        cur=mysql.connection.cursor()
 
-    # employee count
-    cur.execute("select count(*) from registration")
-    emp=cur.fetchone()[0]
+        # employee count
+        cur.execute("select count(*) from registration")
+        emp=cur.fetchone()[0]
 
-    # department count
-    cur.execute("select count(distinct department) from registration")
-    dep=cur.fetchone()[0]
+        # department count
+        cur.execute("select count(distinct department) from registration")
+        dep=cur.fetchone()[0]
 
-    #leaves count
-    cur.execute("select count(*) from leaves")
-    leaves = cur.fetchone()[0]
-    return render_template('index.html',emp=emp,dep=dep,leaves=leaves)
+        #leaves count
+        cur.execute("select count(*) from leaves")
+        leaves = cur.fetchone()[0]
+        return render_template('index.html',emp=emp,dep=dep,leaves=leaves)
 
-
+    except Exception as e:
+        print(e)
+        return "home page error (DB issue)"
 @app.route('/about')
 def about():
     return render_template('about.html')
