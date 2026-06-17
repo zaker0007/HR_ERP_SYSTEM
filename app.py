@@ -17,7 +17,21 @@ mysql=MySQL(app)
 
 @app.route('/')
 def index():
-    return render_template('index.html')
+    cur=mysql.connection.cursor()
+
+    # employee count
+    cur.execute("select count(*) from registration")
+    emp=cur.fetchone()[0]
+
+    # department count
+    cur.execute("select count(distinct department) from registration")
+    dep=cur.fetchone()[0]
+
+    #leaves count
+    cur.execute("select count(*) from leaves")
+    leaves = cur.fetchone()[0]
+    return render_template('index.html',emp=emp,dep=dep,leaves=leaves)
+
 
 @app.route('/about')
 def about():
@@ -63,8 +77,8 @@ def save():
     cur=mysql.connection.cursor()
 
     # query specification
-    cur.execute("insert into registration(id,name,email)"
-                "values(%s,%s,%s)",(id,name,email))
+    cur.execute("insert into registration(id,name,email,number,department,designation,salary)"
+                "values(%s,%s,%s,%s,%s,%s,%s)",(id,name,email,phone,dept,desig,salary))
 
     # transaction save
     mysql.connection.commit()
@@ -100,7 +114,7 @@ def update_employee():
     salary = request.form['salary']
 
     cur=mysql.connection.cursor()
-    cur.execute("update registration set salary=%s,name=%s where id=%s" ,(salary,name,id))
+    cur.execute("update registration set name=%s,email=%s,number=%s,department=%s,designation=%s,salary=%s where id=%s" ,(name,email,phone,dept,desig,salary,id))
     mysql.connection.commit()
     cur.close()
     return render_template('update_employee.html')
@@ -129,6 +143,19 @@ def search_employee_result():
     cur.close()
     return render_template('search_employee_result.html',emplist=emplist)
 
+@app.route("/apply_leave")
+def apply_leave():
+    return render_template('apply_leave.html')
+
+@app.route("/save_leave",methods=['POST'])
+def save_leave():
+    name = request.form['name']
+    reason = request.form['reason']
+
+    cur=mysql.connection.cursor()
+    cur.execute("insert into leaves(emp_name,reason) values(%s,%s)",(name,reason))
+    mysql.connection.commit()
+    return "leave applied successfully"
 
 @app.route("/logout")
 def logout():

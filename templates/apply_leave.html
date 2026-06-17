@@ -3,9 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Search Employee - HR ERP</title>
+    <title>Apply Leave - HR ERP</title>
 
-    <link rel="stylesheet" href="/static/css/search_emp.css">
+    <link rel="stylesheet" href="/static/css/apply_leave.css">
 </head>
 
 <body>
@@ -21,11 +21,11 @@
         </div>
 
         <ul>
-            <li><a href="/admin_dashboard">🏠 Dashboard</a></li>
+            <li><a href="admin_dashboard.html">🏠 Dashboard</a></li>
             <li><a href="/add_employee">➕ Add Employee</a></li>
             <li><a href="/view_employee">👥 View Employees</a></li>
             <li><a href="/search_employee">🔍 Search Employee</a></li>
-             <li><a href="/apply_leave">📄 Apply Leave</a></li>
+            <li><a href="/apply_leave">📄 Apply Leave</a></li>
             <li><a href="/logout">🚪 Logout</a></li>
         </ul>
 
@@ -34,22 +34,17 @@
     <!-- Main Content -->
     <div class="dashboard-content">
 
-        <h1>Search Employee</h1>
+        <h1>Apply Leave</h1>
 
-        <div class="search-box">
+        <div class="leave-form">
 
-            <form action="/search_employee_result" method="post">
+            <form action="/save_leave" method="post">
 
-                <label>Employee Name</label>
+                <input type="text" name="name" placeholder="Employee Name" required>
 
-                <input type="text"
-                       name="empname"
-                       placeholder="Enter Employee Name"
-                       required>
+                <input type="text" name="reason" placeholder="Reason for Leave" required>
 
-                <button type="submit">
-                    Search Employee
-                </button>
+                <button type="submit">Apply Leave</button>
 
             </form>
 

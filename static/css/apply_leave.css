@@ -1,0 +1,104 @@
+/* =========================
+   Dashboard Layout (Same as Add Employee)
+========================= */
+
+.dashboard-container{
+    display:flex;
+    min-height:100vh;
+    font-family: Arial, sans-serif;
+}
+
+.dashboard-sidebar{
+    width:250px;
+    background:#0f172a;
+    color:white;
+    padding:20px;
+}
+
+.profile{
+    text-align:center;
+    margin-bottom:30px;
+}
+
+.profile img{
+    width:100px;
+    height:100px;
+    border-radius:50%;
+    margin-bottom:10px;
+}
+
+.profile h2{
+    font-size:22px;
+}
+
+.dashboard-sidebar ul{
+    list-style:none;
+    padding:0;
+}
+
+.dashboard-sidebar ul li{
+    margin:15px 0;
+}
+
+.dashboard-sidebar ul li a{
+    color:white;
+    text-decoration:none;
+    display:block;
+    padding:10px;
+    border-radius:8px;
+    transition:0.3s;
+}
+
+.dashboard-sidebar ul li a:hover{
+    background:#2563eb;
+}
+
+.dashboard-content{
+    flex:1;
+    padding:40px;
+    background:#f4f6f7;
+}
+
+.dashboard-content h1{
+    color:#0b1f4d;
+    margin-bottom:20px;
+}
+
+/* =========================
+   Leave Form Box (same as employee-form)
+========================= */
+
+.leave-form{
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.1);
+    max-width:700px;
+}
+
+.leave-form form{
+    display:flex;
+    flex-direction:column;
+}
+
+.leave-form input{
+    padding:12px;
+    margin-bottom:15px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    font-size:15px;
+}
+
+.leave-form button{
+    background:#2563eb;
+    color:white;
+    border:none;
+    padding:12px;
+    border-radius:8px;
+    cursor:pointer;
+    font-size:16px;
+}
+
+.leave-form button:hover{
+    background:#1d4ed8;
+}

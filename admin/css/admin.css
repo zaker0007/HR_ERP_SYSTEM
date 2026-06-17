@@ -1,0 +1,166 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial, sans-serif;
+}
+
+body{
+    background:#f4f7fc;
+}
+
+/* Navbar */
+
+nav{
+    background:#0b1f4d;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 60px;
+}
+
+.logo{
+    color:white;
+    font-size:28px;
+    font-weight:bold;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+}
+
+nav ul li{
+    margin-left:25px;
+}
+
+nav ul li a{
+    color:white;
+    text-decoration:none;
+    font-weight:500;
+}
+
+/* Hero */
+
+.hero{
+    background:linear-gradient(135deg,#0b1f4d,#2563eb);
+    color:white;
+    text-align:center;
+    padding:80px 20px;
+}
+
+.hero h1{
+    font-size:48px;
+    margin-bottom:15px;
+}
+
+.hero p{
+    font-size:18px;
+}
+
+/* Layout */
+
+.container{
+    width:90%;
+    margin:40px auto;
+    display:flex;
+    gap:25px;
+}
+
+.main-content{
+    flex:3;
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.1);
+}
+
+.main-content h2{
+    margin-bottom:15px;
+    color:#0b1f4d;
+}
+
+.main-content p{
+    line-height:1.8;
+    margin-bottom:15px;
+}
+
+.sidebar{
+    flex:1;
+
+}
+
+.card{
+    background:white;
+    padding:20px;
+    margin-bottom:20px;
+    border-radius:15px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.1);
+}
+
+.card h3{
+    color:#0b1f4d;
+    margin-bottom:10px;
+}
+
+.card ul{
+    padding-left:18px;
+}
+
+.card li{
+    margin-bottom:10px;
+}
+
+/* Footer */
+
+footer{
+    background:#0b1f4d;
+    color:white;
+    text-align:center;
+    padding:15px;
+    margin-top:40px;
+}
+
+
+/* Login Page */
+
+.login-container{
+    display:flex;
+    justify-content:center;
+    margin:50px 0;
+}
+
+.login-card{
+    width:400px;
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.1);
+}
+
+.login-card h2{
+    text-align:center;
+    color:#2563eb;
+    margin-bottom:20px;
+}
+
+.login-card form{
+    display:flex;
+    flex-direction:column;
+}
+
+.login-card input{
+    padding:12px;
+    margin-bottom:15px;
+    border:1px solid #ccc;
+    border-radius:8px;
+}
+
+.login-card button{
+    padding:12px;
+    background:#2563eb;
+    color:white;
+    border:none;
+    border-radius:8px;
+    cursor:pointer;
+}
