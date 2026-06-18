@@ -1,4 +1,5 @@
 flask
 gunicorn
 flask-mysqldb
+mysqlclient==2.2.4gi
 python-dotenv
