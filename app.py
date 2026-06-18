@@ -5,13 +5,7 @@ from flask_mysqldb import MySQL
 
 app = Flask(__name__)
 
-## database connection
-# app.secret_key="zaker"
-# app.config['MYSQL_HOST'] = 'localhost'
-# app.config['MYSQL_USER'] = 'root'
-# app.config['MYSQL_PASSWORD'] = 'raza@123'
-# app.config['MYSQL_DB'] = 'erp_db'
-# mysql=MySQL(app)
+
 
 
 
@@ -19,7 +13,7 @@ app.config["MYSQL_HOST"] = os.getenv("DB_HOST")
 app.config["MYSQL_USER"] = os.getenv("DB_USER")
 app.config["MYSQL_PASSWORD"] = os.getenv("DB_PASSWORD")
 app.config["MYSQL_DB"] = os.getenv("DB_NAME")
-app.config["MYSQL_PORT"] = (os.getenv("DB_PORT"))
+app.config["MYSQL_PORT"] = int(os.getenv("DB_PORT"))
 
 print("HOST=",os.getenv("DB_HOST"))
 print("USER=",os.getenv("DB_USER"))
