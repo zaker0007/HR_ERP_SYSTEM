@@ -3,4 +3,4 @@ gunicorn
 flask-mysqldb
 mysqlclient==2.2.4
 python-dotenv
-pymysql==1.1.1git
+pymysql==1.1.1
